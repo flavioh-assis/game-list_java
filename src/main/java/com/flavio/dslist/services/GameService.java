@@ -11,6 +11,7 @@ import java.util.List;
 
 @Service
 public class GameService {
+
     @Autowired
     private GameRepository gameRepository;
 
@@ -23,8 +24,8 @@ public class GameService {
 
     @Transactional(readOnly = true)
     public GameDTO findById(Long id) {
-        var foundEntity = gameRepository.findById(id).get();
+        var result = gameRepository.findById(id).get();
 
-        return new GameDTO(foundEntity);
+        return new GameDTO(result);
     }
 }
