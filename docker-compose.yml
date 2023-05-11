@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:15.2-alpine
+    container_name: dev-postgres
+    environment:
+      POSTGRES_DB: db_game_list
+      POSTGRES_PASSWORD: 1234567
+    ports:
+      - 5433:5432
+    volumes:
+      - ./.data/postgresql/data:/var/lib/postgresql/data
